@@ -1,5 +1,5 @@
 import { Component, AfterViewInit, ViewChild } from '@angular/core';
-import { } from 'bingmaps/scripts/MicrosoftMaps/Microsoft.Maps.d';
+import { } from 'bingmaps/types/MicrosoftMaps/Microsoft.Maps.All.d';
 
 @Component({
   selector: 'app-bing-map',
