@@ -1,0 +1,38 @@
+<div class='panel panel-primary'>
+	<div class='panel-heading'>
+		Template Form
+	</div>
+	<form (ngSubmit)="onSubmit()" #f="ngForm">
+		<div class="form-group" [ngClass]="{
+        'has-danger': fulladdress.invalid && (fulladdress.dirty || fulladdress.touched),
+        'has-success': fulladdress.valid && (fulladdress.dirty || fulladdress.touched)}">
+			<label for="fulladdress">Address</label>
+			<input type="text" class="form-control" required [(ngModel)]="model.fulladdress" name="fulladdress" #fulladdress="ngModel">
+			<div class="form-control-feedback"
+			     *ngIf="fulladdress.errors && (fulladdress.dirty || fulladdress.touched)">
+				<p *ngIf="fulladdress.errors.required">Address is required</p>
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="city">City</label>
+			<input type="text" class="form-control" id="city" [(ngModel)]="model.city" name="city">
+		</div>
+		<div class="form-group">
+			<label>State</label>
+			<select class="form-control" name="state" [(ngModel)]="model.state">
+			<option value="">Please select a state</option>
+			<option *ngFor="let state of states"
+			        [value]="state">{{state}}
+			</option>
+		</select>
+		</div>
+		<div class="form-group">
+			<label for="zip">Zip</label>
+			<input type="text" class="form-control" id="zip" [(ngModel)]="model.zip" name="zip">
+		</div>
+		<button type="submit" class="btn btn-primary" [disabled]="f.invalid">Submit
+	</button>
+
+		<pre>{{f.value | json}}</pre>
+	</form>
+</div>

@@ -1,0 +1,21 @@
+﻿<div class="container">
+  <div class="jumbotron">
+    <h1>Welcome Ye Min</h1>
+    <h2>Angular & Bootstrap Demo</h2>
+  </div>
+  <div class="panel panel-primary">
+    <div class="panel-heading"><a routerLink="/" routerLinkActive="active" style="color:white" ><span class="glyphicon glyphicon-home"> Home</span></a></div>
+    <div class="panel-body">
+      <h3>{{title}}</h3>
+      <nav>
+      <a routerLink="/grid" routerLinkActive="active" class="btn btn-danger">Grid</a>
+      <a routerLink="/map" routerLinkActive="active" class="btn btn-info">Map</a>
+      <a routerLink="/charts" routerLinkActive="active" class="btn btn-warning">Charts</a>
+      <a routerLink="/forms" routerLinkActive="active" class="btn btn-success">Forms</a>
+      <a [routerLink]="['/login']" class="btn btn-primary">Logout</a>
+    </nav>
+    </div>
+  </div>
+  <alert></alert>
+  <router-outlet></router-outlet>
+</div>
